@@ -1,0 +1,21 @@
+[package]
+name = "agent-llm"
+version = "0.1.0"
+edition = "2024"
+description = "Streaming LLM provider port and an OpenAI-compatible chat completion client."
+license = "MIT/Apache-2.0"
+readme = "README.md"
+repository = "https://github.com/hellobenben/agent-llm"
+keywords = ["agent", "llm"]
+categories = ["development-tools"]
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+thiserror = "2.0"
+async-openai = {version = "0.43", features = ["chat-completion"]}
+futures = "0.3"
+reqwest = { version = "0.13", default-features = false, features = ["rustls"] }
+
+[dev-dependencies]
+tokio = { version = "1.53", features = ["macros", "rt", "time"] }
